@@ -1,0 +1,39 @@
+<html>
+  <head></head>
+  <body>
+    <div>
+      <form id="form" method="POST">
+        <div>
+          <p>Hello,</p>
+          <p>We want to submit a form to our backend using AJAX, but before doing so we want to validate the form and show a nice response to the user</p>
+          <p>the problem, in case of invalid validation - the page keep refreshing.. can you help?</p>
+        </div>
+        <input type="text">
+        <div>
+          <button id="submit" type="submit">Submit</button>
+        </div>
+      </form>
+
+      <div id="validate_feedback"></div>
+    </div>
+
+    <script type="text/javascript">
+      document.getElementById('submit').onclick = function (event) {
+        // get value from input
+        var input = document.getElementsByTagName('input');
+        var value = input[0].value;
+        // validate input
+        var text;
+        if (value > 10) {
+          text = 'valid';
+          // here we submit the form using AJAX
+          // for the purpose of this example, assume it happens
+        } else {
+          text = 'invalid';
+        }
+
+        document.getElementById('validate_feedback').textContent = text;
+      };
+    </script>
+  </body>
+</html>
